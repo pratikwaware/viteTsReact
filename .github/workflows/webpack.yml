@@ -22,7 +22,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
+    - name: Install dependencies
       run: |
         npm install --legacy-peer-deps
-        npx webpack
+
+    - name: Build
+      run: |
+        npm run build
