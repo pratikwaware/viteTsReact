@@ -4,14 +4,16 @@ import '@testing-library/jest-dom'
 
 describe('Greet', () => {
     
-    test('Greet renders correctly', () => {
+    // fit = test.only
+    fit('Greet renders correctly', () => {
         render(<Greet/>);
         const textElement = screen.getByText(/Hello/);
         expect(textElement).toBeInTheDocument();
     })
     
+    // xit = test.skip
     describe('Nested', () => {
-        test('Greet renders with a name ', () => {
+        xit('Greet renders with a name ', () => {
             render(<Greet name={"Pratik"}/>);
             const textElement = screen.getByText("Hello Pratik");
             expect(textElement).toBeInTheDocument();
